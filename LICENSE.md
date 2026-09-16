@@ -33,4 +33,4 @@ Cal donar el crèdit adequat, proporcionar un enllaç a aquesta llicència i ind
 
 ---
 
-© 2025 Eros Mauri
+© 2026-2027 Eros Mauri
