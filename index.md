@@ -14,8 +14,14 @@ En aquest espai es publicarà la feina de l'assignatura de Sistemes Operatius d'
 
 ### Unitats
 
-- [SP1 — Sistemes d'inici]({% link SP1/SP1.md %})
+<div class="unit-grid">
+  <a class="unit-card" href="{{ '/SP1/SP1.html' | relative_url }}">
+    <span class="unit-number">SP1</span>
+    <strong>Sistemes d'inici</strong>
+    <span class="unit-description">SystemV, systemd, targets i serveis <span aria-hidden="true">→</span></span>
+  </a>
+</div>
 
 ## Llicència
 
-El contingut està subjecte a la llicència [Creative Commons BY-NC-SA 4.0]({% link LICENSE.md %}).
+El contingut està subjecte a la llicència [Creative Commons BY-NC-SA 4.0]({{ '/LICENSE.html' | relative_url }}).

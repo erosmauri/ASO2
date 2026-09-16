@@ -3,6 +3,9 @@ layout: default
 ---
 
 <div class="md-typeset">
+  {% unless page.url == "/" %}
+    <a class="back-link" href="{{ '/' | relative_url }}">← Tornar a l'inici</a>
+  {% endunless %}
   {{ content }}
 </div>
 
