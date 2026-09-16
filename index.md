@@ -12,7 +12,9 @@ En aquest espai es publicarà la feina de l'assignatura de Sistemes Operatius d'
 - Recursos en format PDF, vídeos i Google Colab.
 - Codi i exemples pràctics.
 
-Les unitats i les pràctiques s'afegiran a mesura que avanci el curs.
+### Unitats
+
+- [SP1 — Sistemes d'inici]({% link SP1/SP1.md %})
 
 ## Llicència
 
