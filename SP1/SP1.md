@@ -23,7 +23,7 @@ description: SystemV, systemd, targets i serveis
    6. [Afegir serveis a un target](#36-afegir-serveis-a-un-target)
    7. [Crear un target](#37-crear-un-target)
    8. [Crear un servei](#38-crear-un-servei)
-   9. [Activitat: target personalitzat d'Eros](#39-activitat-target-personalitzat-deros)
+4. [Activitat: target personalitzat d'Eros](#4-activitat-target-personalitzat-deros)
 
 </nav>
 
@@ -208,7 +208,7 @@ El servei s'habilita, es reinicia i queda en estat `active (exited)`, amb codi d
 
 La consulta d'`/etc/passwd` mostra dues línies finals amb `a`, fet que confirma dues execucions de l'script. La resta de coincidències provenen d'altres línies que també contenen aquesta lletra.
 
-### 3.9 Activitat: target personalitzat d'Eros
+## 4. Activitat: target personalitzat d'Eros
 
 L'objectiu és crear `eros.target`, fer-lo predeterminat i executar-hi un servei propi amb permisos de root abans d'arribar a l'entorn gràfic.
 
