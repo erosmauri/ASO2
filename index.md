@@ -1,6 +1,6 @@
 ---
 layout: custom
-title: Sistemes operatius
+title: Sistemes Operatius
 description: Implantació de sistemes operatius a ASIX2
 ---
 

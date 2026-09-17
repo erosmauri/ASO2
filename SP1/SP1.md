@@ -1,6 +1,6 @@
 ---
 layout: custom
-title: Sistemes d'inici
+title: SP1 / Sistemes d'inici
 description: SystemV, systemd, targets i serveis
 ---
 

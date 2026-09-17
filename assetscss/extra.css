@@ -1,12 +1,16 @@
 :root {
-  --paper: #f2efe7;
-  --paper-deep: #e7e1d5;
-  --ink: #171713;
-  --ink-soft: #5e5a52;
-  --signal: #e84b20;
-  --rule: #bbb4a7;
-  --code: #e6dfd1;
-  --terminal: #24131d;
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-2: #eceff3;
+  --text: #111318;
+  --muted: #626873;
+  --line: #d8dce2;
+  --strong-line: #aeb4be;
+  --accent: #315efb;
+  --accent-hover: #2448c9;
+  --header: #101114;
+  --header-muted: #a9adb6;
+  --code: #e8ebf0;
   --content-width: 72rem;
 }
 
@@ -14,218 +18,210 @@
 
 html {
   scroll-behavior: smooth;
-  background: var(--paper);
+  background: var(--bg);
 }
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 17px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
   line-height: 1.65;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: var(--signal);
+  background: var(--accent);
   color: #fff;
 }
 
 a:focus-visible {
-  outline: 3px solid var(--signal);
+  outline: 3px solid var(--accent);
   outline-offset: 4px;
 }
 
 .page-header {
   position: relative;
-  padding: 2.25rem max(1.5rem, calc((100vw - var(--content-width)) / 2)) 4.25rem;
-  border-bottom: 1px solid var(--ink);
-  background: var(--paper);
-  color: var(--ink);
+  padding: 2rem max(1.5rem, calc((100vw - var(--content-width)) / 2)) 4rem;
+  border-bottom: 1px solid #282a30;
+  background: var(--header);
+  color: #fff;
   text-align: left;
 }
 
 .page-header::before {
-  display: block;
-  margin-bottom: clamp(3.5rem, 8vw, 7.5rem);
-  color: var(--signal);
-  content: "ASIX2 / SISTEMES OPERATIUS";
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  display: flex;
+  align-items: center;
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+  color: #8da5ff;
+  content: "●  ASIX2 / 2026—2027";
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 
 .project-name {
-  max-width: 12ch;
+  max-width: none;
   margin: 0;
-  color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.4rem, 8.5vw, 7.6rem);
-  font-weight: 400;
+  color: #fff;
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  font-weight: 700;
   letter-spacing: -0.065em;
-  line-height: 0.88;
+  line-height: 0.98;
   text-shadow: none;
 }
 
 .project-tagline {
-  max-width: 38rem;
-  margin: 2rem 0 0;
-  color: var(--ink-soft);
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  max-width: 42rem;
+  margin: 1.4rem 0 0;
+  color: var(--header-muted);
+  font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.5;
   opacity: 1;
 }
 
 .page-header .btn {
-  margin: 2rem 0.65rem 0 0;
-  padding: 0.55rem 0;
-  border: 0;
-  border-bottom: 1px solid currentColor;
-  border-radius: 0;
-  color: var(--ink);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.05em;
+  margin: 2rem 0.6rem 0 0;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid #3b3e46;
+  border-radius: 6px;
+  background: #181a1f;
+  color: #d8dbe2;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
 }
 
 .page-header .btn:hover {
-  background: transparent;
-  color: var(--signal);
+  border-color: #6f7480;
+  background: #22252b;
+  color: #fff;
 }
 
 .main-content {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: clamp(3rem, 8vw, 7rem) max(1.5rem, 4vw);
+  padding: clamp(3rem, 7vw, 6rem) max(1.5rem, 4vw);
   background: transparent;
-  color: var(--ink);
+  color: var(--text);
 }
 
-.md-typeset {
-  line-height: 1.72;
-}
+.md-typeset { line-height: 1.72; }
 
 .md-typeset > p,
 .md-typeset > ul,
 .md-typeset > ol {
-  max-width: 48rem;
+  max-width: 49rem;
 }
 
 .eyebrow {
-  margin: 0 0 1.5rem;
-  color: var(--signal);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  margin: 0 0 1.25rem;
+  color: var(--accent);
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 
 .intro {
-  max-width: 40rem !important;
+  max-width: 46rem !important;
   margin: 0 0 clamp(4rem, 8vw, 7rem);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.65rem, 3.2vw, 2.65rem);
-  letter-spacing: -0.025em;
-  line-height: 1.2;
+  font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.18;
 }
 
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
 .md-typeset h4 {
-  color: var(--ink);
+  color: var(--text);
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
 }
 
 .md-typeset h1 {
   margin: 4rem 0 2rem;
-  padding: 0 0 0.65rem;
-  border-bottom: 1px solid var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 400;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--strong-line);
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  font-weight: 700;
   letter-spacing: -0.055em;
-  line-height: 0.96;
+  line-height: 1;
 }
 
 .md-typeset h2 {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  margin: clamp(5rem, 10vw, 9rem) 0 2rem;
-  padding: 0.65rem 0 0;
-  border-top: 1px solid var(--ink);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  line-height: 1.35;
-  text-transform: uppercase;
+  margin: clamp(4.5rem, 8vw, 7rem) 0 1.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--strong-line);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 650;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
 }
 
 .md-typeset h3 {
-  max-width: 50rem;
-  margin: clamp(3.5rem, 7vw, 6rem) 0 1.2rem;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 4.5vw, 3.7rem);
-  font-weight: 400;
-  letter-spacing: -0.045em;
-  line-height: 1.02;
+  max-width: 52rem;
+  margin: clamp(3rem, 6vw, 5rem) 0 1rem;
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
 }
 
 .md-typeset h4 {
   margin-top: 2.5rem;
   font-size: 1rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .md-typeset a {
-  color: inherit;
-  text-decoration-color: var(--signal);
+  color: var(--accent);
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.22em;
+  text-underline-offset: 0.2em;
 }
 
-.md-typeset a:hover { color: var(--signal); }
+.md-typeset a:hover { color: var(--accent-hover); }
 
 .back-link {
-  display: inline-block;
-  margin-bottom: clamp(3rem, 7vw, 6rem);
-  padding-bottom: 0.15rem;
-  border-bottom: 1px solid var(--ink);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 2rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text) !important;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-weight: 600;
   text-decoration: none !important;
-  text-transform: uppercase;
 }
 
 .back-link:hover {
-  border-color: var(--signal);
-  color: var(--signal);
+  border-color: var(--accent);
+  color: var(--accent) !important;
 }
 
-.back-link + h2 {
-  margin-top: 3rem;
-}
+.back-link + h2 { margin-top: 3rem; }
 
 .toc {
-  max-width: 58rem;
-  margin: 1.5rem 0 clamp(5rem, 10vw, 9rem);
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  background: transparent;
+  max-width: 62rem;
+  margin: 1.5rem 0 clamp(4rem, 8vw, 7rem);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
 }
 
 .toc > ol {
   margin: 0;
-  padding-left: 1.5rem;
-  columns: 2 18rem;
+  padding-left: 1.4rem;
+  columns: 2 20rem;
   column-gap: 4rem;
 }
 
@@ -235,105 +231,110 @@ a:focus-visible {
 }
 
 .toc li::marker {
-  color: var(--signal);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.75em;
+  color: var(--accent);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78em;
 }
 
 .toc a {
+  color: var(--text);
   font-weight: 500;
   text-decoration: none;
 }
 
+.toc a:hover { color: var(--accent); }
+
 .unit-grid {
-  margin: 1.5rem 0 clamp(5rem, 9vw, 8rem);
-  border-top: 1px solid var(--ink);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 clamp(4rem, 8vw, 7rem);
 }
 
 .unit-card {
   display: grid;
-  grid-template-columns: 5rem minmax(13rem, 1fr) minmax(14rem, 0.8fr);
-  gap: 1.5rem;
-  align-items: baseline;
-  padding: 1.6rem 0;
-  border-bottom: 1px solid var(--ink);
-  color: var(--ink) !important;
+  grid-template-rows: auto 1fr auto;
+  min-height: 200px;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text) !important;
   text-decoration: none !important;
-  transition: color 150ms ease, padding 150ms ease;
+  transition: border-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
 }
 
 .unit-card:hover {
-  padding-right: 1rem;
-  padding-left: 1rem;
-  background: var(--signal);
-  color: #fff !important;
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(32, 43, 74, 0.1);
 }
 
 .unit-number {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  width: fit-content;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
 .unit-card strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.5rem, 3vw, 2.35rem);
-  font-weight: 400;
+  align-self: center;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 650;
   letter-spacing: -0.035em;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .unit-description {
-  color: var(--ink-soft);
-  font-size: 0.9rem;
+  color: var(--muted);
+  font-size: 0.88rem;
 }
-
-.unit-card:hover .unit-description { color: #fff; }
 
 .md-typeset p:has(> img) {
   max-width: none;
-  margin: clamp(2rem, 5vw, 4rem) 0 1rem;
+  margin: clamp(2rem, 5vw, 4rem) 0 0.85rem;
 }
 
 .md-typeset img {
   display: block;
   width: auto;
-  max-width: calc(100% - 8px);
+  max-width: 100%;
   height: auto;
-  margin: 0 8px 8px 0;
-  border: 1px solid var(--ink);
-  border-radius: 0;
-  background: var(--terminal);
-  box-shadow: 8px 8px 0 var(--paper-deep);
+  margin: 0;
+  border: 1px solid var(--strong-line);
+  border-radius: 6px;
+  background: #2c001e;
+  box-shadow: none;
 }
 
 .md-typeset p:has(> img) + p {
-  max-width: 48rem;
+  max-width: 49rem;
   margin-top: 0;
-  padding: 0.85rem 0 0 2.25rem;
-  border: 0;
-  border-left: 1px solid var(--signal);
-  border-radius: 0;
-  background: transparent;
-  color: var(--ink-soft);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1rem;
-  font-style: italic;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 .md-typeset code {
-  padding: 0.12em 0.32em;
-  border-radius: 0;
+  padding: 0.12em 0.34em;
+  border-radius: 4px;
   background: var(--code);
-  color: var(--ink);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.87em;
+  color: var(--text);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.86em;
 }
 
 .md-typeset pre {
-  border-left: 3px solid var(--signal);
-  border-radius: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
 }
 
 .md-typeset pre code {
@@ -346,11 +347,11 @@ a:focus-visible {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 2rem;
-  margin-top: clamp(5rem, 10vw, 9rem);
+  margin-top: clamp(4rem, 8vw, 7rem);
   padding-top: 1.25rem;
-  border-top: 1px solid var(--ink);
-  color: var(--ink-soft);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.7rem;
   line-height: 1.55;
 }
@@ -358,46 +359,30 @@ a:focus-visible {
 .license p { margin: 0; }
 
 .site-footer {
-  margin-top: 6rem;
+  margin-top: 5rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--rule);
-  color: var(--ink-soft);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.68rem;
 }
 
 @media (max-width: 700px) {
-  body { font-size: 16px; }
-
   .page-header {
     padding-top: 1.5rem;
     padding-bottom: 3rem;
   }
 
-  .page-header::before {
-    margin-bottom: 4rem;
-  }
+  .page-header::before { margin-bottom: 3.5rem; }
 
   .project-name {
-    font-size: clamp(3rem, 17vw, 5rem);
+    font-size: clamp(2.65rem, 13vw, 4.2rem);
+    letter-spacing: -0.055em;
   }
 
-  .main-content {
-    padding-top: 3.5rem;
-  }
+  .main-content { padding-top: 3.5rem; }
 
-  .unit-card {
-    grid-template-columns: 3.5rem 1fr;
-    gap: 0.6rem 1rem;
-  }
-
-  .unit-description {
-    grid-column: 2;
-  }
-
-  .toc > ol {
-    columns: 1;
-  }
+  .toc > ol { columns: 1; }
 
   .license {
     grid-template-columns: 1fr;
@@ -407,18 +392,23 @@ a:focus-visible {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #191815;
-    --paper-deep: #333029;
-    --ink: #eee9df;
-    --ink-soft: #b6afa3;
-    --signal: #ff6840;
-    --rule: #5d584f;
-    --code: #302d27;
-    --terminal: #120a0f;
+    --bg: #101216;
+    --surface: #17191e;
+    --surface-2: #20232a;
+    --text: #f0f1f3;
+    --muted: #a8adb7;
+    --line: #30343c;
+    --strong-line: #555b66;
+    --accent: #7190ff;
+    --accent-hover: #9aafff;
+    --header: #090a0c;
+    --header-muted: #a4a8b1;
+    --code: #252830;
   }
 
-  .unit-card:hover { color: #171713 !important; }
-  .unit-card:hover .unit-description { color: #171713; }
+  .unit-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
