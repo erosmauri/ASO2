@@ -4,7 +4,9 @@ title: Sistemes operatius
 description: Implantació de sistemes operatius a ASIX2
 ---
 
-En aquest espai es publicarà la feina de l'assignatura de Sistemes Operatius d'ASIX2.
+<p class="eyebrow">ASIX2 · CURS 2026—2027</p>
+
+<p class="intro">Quadern de pràctiques de Sistemes Operatius: processos, arrencada, serveis i administració del sistema.</p>
 
 ## Contingut
 
