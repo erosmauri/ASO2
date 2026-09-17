@@ -14,7 +14,7 @@
   --yellow: #ffd166;
   --content-width: 76rem;
   --display: "Bricolage Grotesque", "Arial Narrow", sans-serif;
-  --body: "Plus Jakarta Sans", Arial, sans-serif;
+  --body: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: "JetBrains Mono", monospace;
 }
 
@@ -343,33 +343,22 @@ a:focus-visible {
   height: auto;
   margin: 0;
   border: 1px solid #4b5e7b;
-  border-radius: 3px 3px 0 0;
+  border-radius: 3px;
   background: #2c001e;
   box-shadow: 12px 12px 0 rgba(8, 31, 43, 0.8);
 }
 
 .md-typeset p:has(> img) + p {
-  position: relative;
   max-width: min(100%, 55rem);
-  margin: 0;
-  padding: 1.15rem 1.3rem 1.2rem 3rem;
+  margin: 1.1rem 0 0;
+  padding: 1.1rem 1.3rem;
   border: 1px solid #4b5e7b;
-  border-top: 0;
-  border-radius: 0 0 3px 3px;
+  border-left: 4px solid var(--cyan);
+  border-radius: 3px;
   background: var(--panel-raised);
   color: #d6deee;
-  font-size: 0.92rem;
-}
-
-.md-typeset p:has(> img) + p::before {
-  position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-  width: 0.7rem;
-  height: 0.7rem;
-  background: var(--coral);
-  content: "";
-  transform: rotate(45deg);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .md-typeset code {
