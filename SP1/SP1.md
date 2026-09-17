@@ -23,6 +23,7 @@ description: SystemV, systemd, targets i serveis
    6. [Afegir serveis a un target](#36-afegir-serveis-a-un-target)
    7. [Crear un target](#37-crear-un-target)
    8. [Crear un servei](#38-crear-un-servei)
+   9. [Activitat: target personalitzat d'Eros](#39-activitat-target-personalitzat-deros)
 
 </nav>
 
@@ -206,3 +207,43 @@ El servei s'habilita, es reinicia i queda en estat `active (exited)`, amb codi d
 ![Comprovació del resultat de l'script](imatges/35.png)
 
 La consulta d'`/etc/passwd` mostra dues línies finals amb `a`, fet que confirma dues execucions de l'script. La resta de coincidències provenen d'altres línies que també contenen aquesta lletra.
+
+### 3.9 Activitat: target personalitzat d'Eros
+
+L'objectiu és crear `eros.target`, fer-lo predeterminat i executar-hi un servei propi amb permisos de root abans d'arribar a l'entorn gràfic.
+
+![Comprovació del target inicial](imatges/36.png)
+
+`systemctl get-default` confirma que el sistema arrenca inicialment amb `graphical.target`.
+
+![Creació de l'script d'arrencada](imatges/37.png)
+
+Es crea `eros-arrencada.sh`, que registra la data i l'usuari d'execució, i genera el fitxer de control `/run/eros-arrencada-ok`. Només root el pot executar.
+
+![Definició del servei eros-arrencada](imatges/38.png)
+
+El servei és de tipus `oneshot`, executa l'script com a root i queda associat a `eros.target`.
+
+![Definició del target personalitzat](imatges/39.png)
+
+`eros.target` requereix l'entorn gràfic i permet utilitzar-lo amb `systemctl isolate`.
+
+![Validació i dependències del target](imatges/40.png)
+
+Després de recarregar systemd, els fitxers es validen sense errors. En habilitar el servei es crea l'enllaç dins d'`eros.target.wants` i apareix a l'arbre de dependències.
+
+![Prova manual del servei](imatges/41.png)
+
+El servei finalitza correctament com a `active (exited)`. El registre mostra `uid=0(root)` i el fitxer de control confirma l'execució.
+
+![Configuració d'eros.target com a predeterminat](imatges/42.png)
+
+`systemctl set-default` canvia l'arrencada a `eros.target`; tant `get-default` com l'enllaç `default.target` ho confirmen.
+
+![Reinici de la màquina virtual](imatges/43.png)
+
+Es reinicia la màquina virtual per comprovar que el target i el servei funcionen durant una arrencada real.
+
+![Comprovació final després del reinici](imatges/44.png)
+
+Després del reinici, `eros.target` és el predeterminat, l'entorn gràfic continua actiu i el servei s'ha executat correctament com a root. El registre conté una entrada nova i el fitxer de control existeix.
